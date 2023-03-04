@@ -1,0 +1,156 @@
+$soft-red: hsl(14, 88%, 65%);
+$soft-violet: hsl(273, 75%, 66%);
+$soft-blue: hsl(240, 73%, 65%);
+$very-dark-grayish-blue: hsl(237, 12%, 33%);
+$dark-grayish-blue: hsl(240, 6%, 50%);
+$light-grayish-blue: hsl(240, 5%, 91%);
+
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Kumbh Sans';
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, $soft-violet, $soft-blue);
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    padding: 10rem 2rem 3rem 2rem;
+    margin: 16rem 0;
+    width: 25rem;
+    border-radius: 2rem;
+    background-color: white;
+    height: min-content;
+    justify-content: space-between;
+}
+
+.img {
+    position: relative;
+    .illustration-img {
+        position: absolute;
+        bottom: 2.5rem;
+        left: 0.8rem;
+        width: 24rem;
+    }
+    .bg-img {
+        position: absolute;
+        bottom: -0.5rem;
+        left: 0.8rem;
+        width: 24rem;
+    }
+}
+.box {
+    position: absolute;
+    z-index: 999;
+    left: -12rem;
+    bottom: -11rem;
+    display: none;
+}
+
+.faq {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+        text-align: center;
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+    .question {
+        width: 100%;
+        .inline {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 0.5rem;
+            header {
+                font-size: 1.35rem;
+                color: $very-dark-grayish-blue;
+            }
+            img {
+                margin-left: 1rem;
+            }
+        }
+        .inline:hover {
+            cursor: pointer;
+        }
+        p {
+            color: $dark-grayish-blue;
+            font-size: 1.25rem;
+            display: none;
+        }
+        .line {
+            width: 100%;
+            height: 1px;
+            background-color: $light-grayish-blue;
+            margin-top: 1.3rem;
+        }
+        margin-bottom: 1rem;
+    }
+    img {
+        transform: rotate(0deg);
+        transition: 0.3s;
+    }
+    .active {
+        header {
+            font-weight: 700;
+        }
+        p {
+            display: block;
+        }
+        img {
+            transform: rotate(180deg);
+            transition: 0.3s;
+        }
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .card {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 72rem;
+        position: relative;
+    }
+    .img {
+        overflow: hidden;
+        width: 32rem;
+        height: 40rem;
+        .illustration-img {
+            width: 35rem;
+            left: -5.5rem;
+            top: 5rem;
+        }
+        .bg-img {
+            width: 35rem;
+            left: -5.5rem;
+            bottom: 3rem;
+        }
+    }
+    .box {
+        display: block;
+        position: absolute;
+        width: 15rem;
+        top: 14.5rem;
+        left: -7.25rem;
+    }
+    .faq {
+        margin: 0 6rem 0 0;
+        max-width: 30rem;
+        width: 30rem;
+    }
+}
